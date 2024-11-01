@@ -36,7 +36,7 @@
 
 ## 💭 About The Project <a name="about"></a>
 
-This project aims to fine-tune a [MentalLongformer](https://arxiv.org/abs/2304.10447) model for a depression causal analysis downstream task using CAMS dataset ([paper](http://www.lrec-conf.org/proceedings/lrec2022/pdf/2022.lrec-1.686.pdf) | [GitHub](https://github.com/drmuskangarg/CAMS/)). This model reaches SOTA performance (read below for details) for depression causal analysis task.
+This project aims to fine-tune a [MentalLongformer](https://arxiv.org/abs/2304.10447) model for a depression causal analysis downstream task using CAMS dataset ([paper](http://www.lrec-conf.org/proceedings/lrec2022/pdf/2022.lrec-1.686.pdf), [GitHub](https://github.com/drmuskangarg/CAMS/)). This model reaches SOTA performance (read below for details) for depression causal analysis task.
 
 This project is developed as a part of my undegraduate thesis research.
 
@@ -90,6 +90,37 @@ pipe = pipeline("text-classification", model="stackofsugar/mentallongformer-cams
 ```
 
 If you're not sure yet, you might want to read [HuggingFace's Course on NLP](https://huggingface.co/learn/nlp-course/chapter1/1).
+
+### Replicating My Research
+
+If you're researching this topic - just like me - you might be interested in replicating my research. You can open the [notebooks](https://github.com/stackofsugar/depression-causal-analysis/tree/main/notebooks) folder to see the notebooks that I use for my research.
+
+Mind you that I'm excluding a notebook for preprocessing purposes (deleting `inference` column, renaming `cause` column, and deleting empty rows), as it contains a private repository. Nevertheless, I prepared the pre-processed dataset in [notebooks/data](https://github.com/stackofsugar/depression-causal-analysis/tree/main/notebooks/data) folder in HuggingFace Datasets format that has a first-party integration with other HuggingFace libraries.
+
+`1-train.ipynb` Contains the training script, while `1b-hyperparam-search.ipynb` contains the hyperparameter search script. Below are steps that might help you to replicate this research:
+
+1. If you haven't already, install [Python](https://www.python.org/downloads/).
+2. If you have an NVIDIA GPU and are willing to use it to train, install [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit). It requires a C++ compiler, so install according to your chip and consult their docs. AMD GPU users might want to take a look at [ZLUDA](https://github.com/vosen/ZLUDA), but I dont know will my notebook work with it or not.
+3. I highly reccomend to setup a Python virtual environment to make your global workspace clean. Consult its docs [here](https://docs.python.org/3/library/venv.html).
+4. Install the required packages using `pip install -r /path/to/requirements.txt`
+5. Run the notebook using [VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [Jupyter](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#starting-the-notebook-server), or others.
+
+### Running The Inference Server Locally
+
+You might also want to run the inference server (the one I hosted on HuggingFace Spaces) locally. The server is powered with [Streamlit](https://streamlit.io/) that provided a very easy way to make ML/DL showcases like I did. The server is lightweight, and can provide a fast prediction even on slow CPUs (I can't say how fast it is though). You can follow the steps below:
+
+1. Clone the [repo](https://huggingface.co/spaces/stackofsugar/depression-causal-analysis/tree/main). If you haven't set Git up in your machine, [install it](https://git-scm.com/downloads).
+
+```sh
+# Make sure you have git-lfs installed (https://git-lfs.com)
+> git lfs install
+
+> git clone https://huggingface.co/spaces/stackofsugar/depression-causal-analysis
+```
+
+2. I highly reccomend to setup a Python virtual environment to make your global workspace clean. Consult its docs [here](https://docs.python.org/3/library/venv.html).
+3. Install the required packages using `pip install -r /path/to/requirements.txt`
+4. Run the server using `streamlit run path/to/app.py`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

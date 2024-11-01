@@ -1,0 +1,49 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "cams",
+  "dataset_size": 5353448,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/stackofsugar/CAMS@999eb04251696f7bfebdecda3c4445ceacfc4a71/CAMS_final_utf8_trim.csv": {
+      "num_bytes": 5314804,
+      "checksum": null
+    }
+  },
+  "download_size": 5314804,
+  "features": {
+    "selftext": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "label": {
+      "names": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "_type": "ClassLabel"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 10668252,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 5353448,
+      "num_examples": 4986,
+      "dataset_name": "cams"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
