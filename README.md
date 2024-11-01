@@ -86,7 +86,7 @@ If you prefer to use the high-level HuggingFace pipeline to make predictions, yo
 ```py
 from transformers import pipeline
 
-pipe = pipeline("text-classification", model="stackofsugar/mentallongformer-cams-finetuned")     
+pipe = pipeline("text-classification", model="stackofsugar/mentallongformer-cams-finetuned", tokenizer="aimh/mental-longformer-base-4096")     
 ```
 
 If you're not sure yet, you might want to read [HuggingFace's Course on NLP](https://huggingface.co/learn/nlp-course/chapter1/1).
