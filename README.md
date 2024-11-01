@@ -27,10 +27,6 @@
     Fine-tuned Longformer model to detect root cause of depression in long texts.
 </p>
 
-<div align="center">
-    <h2>Coming soon!</h2>
-</div>
-
 ## 📝 Table of Contents
 
 -   [About The Project](#about)
